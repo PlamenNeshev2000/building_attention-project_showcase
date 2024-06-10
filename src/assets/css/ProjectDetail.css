@@ -1,0 +1,71 @@
+.project-detail-container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .carousel-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    max-width: 200px; /* Adjust the max-width to make the carousel smaller */
+  }
+  
+  .carousel-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0;
+  }
+  
+  .carousel-item img {
+    width: 100%; /* Ensure the image fits within the carousel item */
+    height: auto;
+  }
+  
+  .carousel-item-title {
+    margin-top: 10px;
+    font-size: 1rem;
+    text-align: center;
+  }
+  
+  .project-info-container {
+    flex: 2;
+    padding: 20px;
+  }
+  
+  .project-info-container h2 {
+    font-size: 2rem;
+  }
+  
+  .project-info-container .project-image {
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+  }
+  
+  /* Arrow button styles */
+  .arrow {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    color: #000;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .arrow-prev {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .arrow-next {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  

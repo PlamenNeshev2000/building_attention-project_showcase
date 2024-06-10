@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 .App {
   text-align: center;
 }
@@ -38,6 +40,7 @@
 }
 
 body, html, #root {
+  font-family: "Poppins", sans-serif ;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -59,7 +62,6 @@ body, html, #root {
   height: 100vh;
   width: 100vw;
 
-
 }
 
 .project-container {
@@ -75,7 +77,7 @@ body, html, #root {
   color: white;
   text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
   text-align: center;
-  margin-bottom: 10px; /* Adjust as needed for spacing */
+  margin-bottom: 15px; /* Adjust as needed for spacing */
 }
 
 div {
@@ -89,4 +91,13 @@ div {
 img {
   max-width: 100%;
   max-height: 100%;
+}
+
+/* Logo */
+.app-logo {
+  position: fixed;
+  bottom: 50px; /* Adjust as needed */
+  left: 50px; /* Adjust as needed */
+  width: 350px; /* Adjust as needed */
+  height: auto; /* Maintain aspect ratio */
 }
