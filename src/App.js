@@ -8,10 +8,9 @@ const App = () => (
   <Router>
     <Routes>
       <Route path="/" element={<CoverflowComponent />} />
-       <Route path="/detail/:imageId" element={<ProjectInfo />} /> 
+      <Route path="/detail/:imageId" element={<ProjectInfo />} />
     </Routes>
   </Router>
 );
 
 export default App;
-
