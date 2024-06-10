@@ -96,8 +96,9 @@ img {
 /* Logo */
 .app-logo {
   position: fixed;
-  bottom: 50px; /* Adjust as needed */
-  left: 50px; /* Adjust as needed */
-  width: 350px; /* Adjust as needed */
-  height: auto; /* Maintain aspect ratio */
+  bottom: 50px;
+  right: 50px; /* Change this from left to right */
+  width: 400px; /* Adjust the size as needed */
+  height: auto;
+  z-index: 1000;
 }
