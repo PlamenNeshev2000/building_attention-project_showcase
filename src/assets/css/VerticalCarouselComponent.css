@@ -1,39 +1,112 @@
 .vertical-carousel {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow-y: scroll;
-    height: 100%;
-    scrollbar-width: thin;
-  }
-  
-  .carousel-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px 0;
-    cursor: pointer;
-    transition: transform 0.5s, opacity 0.5s;
-  }
-  
-  .carousel-item.active {
-    transform: scale(1.2);
-    opacity: 1;
-  }
-  
-  .carousel-item:not(.active) {
-    transform: scale(0.8);
-    opacity: 0.5;
-  }
-  
-  .carousel-image {
-    width: 150px;
-    height: auto;
-  }
-  
-  .carousel-item-title {
-    margin-top: 10px;
-    font-size: 1rem;
-    text-align: center;
-  }
-  
+  position: relative; /* Position the carousel relative to its container */
+  width: 100%; /* Full width */
+  height: 100vh; /* Full viewport height */
+  overflow: hidden; /* Hide overflow to prevent scrolling outside the container */
+  background: #444444; /* Background color */
+}
+
+.carousel-container {
+  display: flex; /* Flexbox for vertical alignment */
+  flex-direction: column; /* Align items in a column */
+  height: 100%; /* Full height */
+  overflow-y: scroll; /* Enable vertical scrolling */
+  scroll-behavior: smooth; /* Smooth scrolling */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  padding-top: 60px; /* Adjusted for button space */
+  padding-bottom: 60px; /* Adjusted for button space */
+}
+
+.carousel-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Webkit browsers */
+}
+
+.carousel-item {
+  flex: 0 0 150px; /* Fixed height for each item */
+  display: flex; /* Flexbox for content alignment */
+  flex-direction: column; /* Align content vertically */
+  align-items: center; /* Center align items */
+  justify-content: center; /* Center justify items */
+  background: #d3d3d3; /* Background color */
+  font-size: 24px; /* Font size */
+  font-weight: bold; /* Font weight */
+  color: #646464; /* Font color */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, height 0.5s ease-in-out, box-shadow 0.5s ease-in-out; /* Smooth transitions */
+  padding: 7px; /* Padding inside items */
+  margin: 10px; /* Margin between items */
+  border-radius: 8px; /* Rounded corners */
+  z-index: 1; /* Base z-index */
+}
+
+.carousel-item.active {
+  transform: scale(1.1); /* Scale up the active item */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Add shadow to the active item */
+  z-index: 2; /* Ensure the active item is on top */
+}
+
+.carousel-item img {
+  max-width: 100%; /* Ensure images are responsive */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 0px; /* Remove bottom margin */
+}
+
+.project-title-vertical {
+  text-align: center; /* Center align text */
+  color: #333; /* Font color */
+  font-size: 20px; /* Font size */
+}
+
+.project-specialization-vertical {
+  text-align: center; /* Center align text */
+  color: #666; /* Font color */
+  font-size: 16px; /* Font size */
+}
+
+.carousel-button {
+  position: absolute; /* Position the buttons absolutely */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center align */
+  background-color: #007bff; /* Button background color */
+  border: none; /* Remove border */
+  color: white; /* Text color */
+  padding: 10px 20px; /* Padding inside buttons */
+  text-align: center; /* Center align text */
+  text-decoration: none; /* Remove underline from text */
+  display: inline-block; /* Inline-block display */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  border-radius: 8px; /* Rounded corners */
+  z-index: 3; /* Ensure buttons are above carousel items */
+}
+
+.carousel-button.top {
+  top: 20px; /* Position at the top */
+}
+
+.carousel-button.bottom {
+  bottom: 20px; /* Position at the bottom */
+}
+
+.carousel-button:hover {
+  background-color: #0056b3; /* Darken background on hover */
+}
+
+/* Arrow styles for buttons */
+.carousel-button::before {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.carousel-button.top::before {
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent white transparent;
+}
+
+.carousel-button.bottom::before {
+  border-width: 10px 10px 0 10px;
+  border-color: white transparent transparent transparent;
+}
