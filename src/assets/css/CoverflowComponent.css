@@ -1,0 +1,12 @@
+.project-container {
+  transition: transform 0.3s ease;
+}
+
+.project-container.active {
+  transform: scale(1.2); /* Increase the size of the active item */
+}
+
+.project-container.inactive {
+  transform: scale(0.8); /* Decrease the size of inactive items */
+}
+

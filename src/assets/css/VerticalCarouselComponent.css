@@ -23,6 +23,7 @@
 
 .carousel-item {
   flex: 0 0 150px; /* Fixed height for each item */
+  width: 80%; /* Fixed width for each item */
   display: flex; /* Flexbox for content alignment */
   flex-direction: column; /* Align content vertically */
   align-items: center; /* Center align items */
@@ -33,8 +34,8 @@
   color: #646464; /* Font color */
   cursor: pointer; /* Pointer cursor on hover */
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, height 0.5s ease-in-out, box-shadow 0.5s ease-in-out; /* Smooth transitions */
-  padding: 7px; /* Padding inside items */
-  margin: 10px; /* Margin between items */
+  padding: 10px; /* Padding inside items */
+  margin: 20px auto; /* Center align items horizontally and add a bigger margin */
   border-radius: 8px; /* Rounded corners */
   z-index: 1; /* Base z-index */
 }
@@ -46,9 +47,10 @@
 }
 
 .carousel-item img {
-  max-width: 100%; /* Ensure images are responsive */
-  height: auto; /* Maintain aspect ratio */
-  margin-bottom: 0px; /* Remove bottom margin */
+  width: 100%; /* Ensure images fit within the item */
+  height: 150px; /* Fixed height for images */
+  object-fit: cover; /* Cover the space without distorting */
+  margin-bottom: 10px; /* Space between image and text */
 }
 
 .project-title-vertical {
@@ -109,4 +111,17 @@
 .carousel-button.bottom::before {
   border-width: 10px 10px 0 10px;
   border-color: white transparent transparent transparent;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.carousel-item {
+  animation: fadeIn 0.5s ease-in-out;
 }

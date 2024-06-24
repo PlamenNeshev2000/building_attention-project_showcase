@@ -38,6 +38,7 @@
   
   .project-info-container h2 {
     font-size: 2rem;
+    color: #f0f0f0;
   }
   
   .project-info-container .project-image {
@@ -69,3 +70,7 @@
     transform: translateX(-50%);
   }
   
+  ul{
+    color: #ffffff;
+    font-size: large;
+  }
