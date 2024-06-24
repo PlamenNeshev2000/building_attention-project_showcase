@@ -1,4 +1,3 @@
-// src/components/VerticalCarouselComponent.js
 import React, { useRef, useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../css/VerticalCarouselComponent.css';
@@ -17,18 +16,26 @@ const VerticalCarouselComponent = ({ onProjectSelect, projects }) => {
   const handleNext = () => {
     const nextIndex = (currentIndex + 1) % (projects.length / 3);
     scrollToProject(nextIndex);
+    handleProjectChange(nextIndex);
   };
 
   const handlePrev = () => {
     const prevIndex = (currentIndex - 1 + projects.length / 3) % (projects.length / 3);
     scrollToProject(prevIndex);
+    handleProjectChange(prevIndex);
   };
 
   const handleClick = (index) => {
     const actualIndex = index % (projects.length / 3);
     setCurrentIndex(actualIndex);
     scrollToProject(actualIndex);
-    onProjectSelect(projects[actualIndex]);
+    handleProjectChange(actualIndex);
+  };
+
+  const handleProjectChange = (index) => {
+    const project = projects[index];
+    navigate(project.link);
+    onProjectSelect(project);
   };
 
   const scrollToProject = (index) => {
