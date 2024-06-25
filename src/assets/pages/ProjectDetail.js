@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import VerticalCarouselComponent from '../components/VerticalCarouselComponent';
-import { projectsData } from '../../data/ProjectsData.js'; // Import your project data
+import { projects } from '../../data/ProjectsData.js'; // Updated import
 import '../css/ProjectDetail.css';
 
 const ProjectDetail = () => {
@@ -9,7 +9,7 @@ const ProjectDetail = () => {
   const [currentProject, setCurrentProject] = useState(null);
 
   useEffect(() => {
-    const project = projectsData.find(p => p.id === projectId);
+    const project = projects.find(p => p.id === projectId);
     setCurrentProject(project);
   }, [projectId]);
 
@@ -22,7 +22,7 @@ const ProjectDetail = () => {
   return (
     <div className="project-detail-container">
       <div className="carousel-container">
-        <VerticalCarouselComponent onProjectSelect={setCurrentProject} projects={projectsData} />
+        <VerticalCarouselComponent onProjectSelect={setCurrentProject} projects={projects} />
       </div>
       <div className="project-info-container">
         <h2>{currentProject.title}</h2>

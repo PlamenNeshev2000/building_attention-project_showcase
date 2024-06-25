@@ -1,7 +1,7 @@
 import React from 'react';
-import '../css/ProjectDetailComponent.css';
+import '../css/ProjectInfoComponent.css';
 
-const ProjectDetailComponent = ({ project }) => {
+const ProjectInfoComponent = ({ project }) => {
   if (!project) {
     return <div>Project not found</div>;
   }
@@ -39,4 +39,4 @@ const ProjectDetailComponent = ({ project }) => {
   );
 };
 
-export default ProjectDetailComponent;
+export default ProjectInfoComponent;

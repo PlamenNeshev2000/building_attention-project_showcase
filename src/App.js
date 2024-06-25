@@ -5,12 +5,14 @@ import CoverflowComponent from './assets/components/CoverflowComponent';
 import ProjectDetail from './assets/pages/ProjectDetail';
 import logo from './assets/images/Logo.png'; // Import the logo
 import VerticalCarouselComponent from './assets/components/VerticalCarouselComponent';
+import { projectsData } from './data/ProjectsData';
 
 const App = () => (
   <Router>
     <div className="app-container">
       <Routes>
         <Route path="/" element={<CoverflowComponent />} />
+        <Route path="/detail/:projectId" element={<ProjectDetail />} />
         <Route path="/detail/:projectId" element={<ProjectDetail/>} />
       </Routes>
       <img src={logo} alt="Logo" className="app-logo" /> {/* Add the logo */}

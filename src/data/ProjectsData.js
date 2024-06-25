@@ -1,5 +1,5 @@
 // src/data/projectsData.js
-export const projectsData = [
+export const projects = [
     {
       id: 'project-management',
       title: 'Project Management',
