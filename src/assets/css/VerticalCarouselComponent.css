@@ -1,9 +1,9 @@
 .vertical-carousel {
   position: relative; /* Position the carousel relative to its container */
   width: 100%; /* Full width */
-  height: 100vh; /* Full viewport height */
+  height: 90vh; /* Full viewport height */
   overflow: hidden; /* Hide overflow to prevent scrolling outside the container */
-  background: #444444; /* Background color */
+  
 }
 
 .carousel-container {
@@ -28,7 +28,7 @@
   flex-direction: column; /* Align content vertically */
   align-items: center; /* Center align items */
   justify-content: center; /* Center justify items */
-  background: #d3d3d3; /* Background color */
+  background: #d3d3d3; /* Background color of itemm*/
   font-size: 24px; /* Font size */
   font-weight: bold; /* Font weight */
   color: #646464; /* Font color */
@@ -41,7 +41,7 @@
 }
 
 .carousel-item.active {
-  transform: scale(1.1); /* Scale up the active item */
+  transform: scale(1.2); /* Scale up the active item */
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Add shadow to the active item */
   z-index: 2; /* Ensure the active item is on top */
 }
@@ -55,7 +55,7 @@
 
 .project-title-vertical {
   text-align: center; /* Center align text */
-  color: #333; /* Font color */
+  color: #000000; /* Font color */
   font-size: 20px; /* Font size */
 }
 
@@ -83,11 +83,15 @@
 }
 
 .carousel-button.top {
-  top: 20px; /* Position at the top */
+  top: 3%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .carousel-button.bottom {
-  bottom: 20px; /* Position at the bottom */
+  bottom: 3%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .carousel-button:hover {

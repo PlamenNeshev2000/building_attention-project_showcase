@@ -14,19 +14,19 @@ const VerticalCarouselComponent = ({ onProjectSelect, projects }) => {
   }, [projects]);
 
   const handleNext = () => {
-    const nextIndex = (currentIndex + 1) % (projects.length / 3);
+    const nextIndex = (currentIndex + 1) % projects.length;
     scrollToProject(nextIndex);
     handleProjectChange(nextIndex);
   };
 
   const handlePrev = () => {
-    const prevIndex = (currentIndex - 1 + projects.length / 3) % (projects.length / 3);
+    const prevIndex = (currentIndex - 1 + projects.length) % projects.length;
     scrollToProject(prevIndex);
     handleProjectChange(prevIndex);
   };
 
   const handleClick = (index) => {
-    const actualIndex = index % (projects.length / 3);
+    const actualIndex = index % projects.length;
     setCurrentIndex(actualIndex);
     scrollToProject(actualIndex);
     handleProjectChange(actualIndex);
@@ -34,13 +34,17 @@ const VerticalCarouselComponent = ({ onProjectSelect, projects }) => {
 
   const handleProjectChange = (index) => {
     const project = projects[index];
-    navigate(project.link);
+    if (!project) {
+      console.error(`No project found at index: ${index}`);
+      return;
+    }
+    navigate(`/detail/${project.id}`);
     onProjectSelect(project);
   };
 
   const scrollToProject = (index) => {
     const container = carouselRef.current;
-    const itemOffsetTop = (index + projects.length / 3) * itemHeight; // Offset by one set of projects
+    const itemOffsetTop = (index + projects.length) * itemHeight; // Offset by one set of projects
     const scrollPosition = itemOffsetTop - container.clientHeight / 2 + itemHeight / 2;
     setCurrentIndex(index);
     container.scrollTo({ top: scrollPosition, behavior: 'smooth' });
@@ -48,7 +52,6 @@ const VerticalCarouselComponent = ({ onProjectSelect, projects }) => {
 
   const handleScroll = () => {
     const container = carouselRef.current;
-    const itemsLength = projects.length / 3;
     if (container.scrollTop <= 0) {
       container.scrollTop = container.scrollHeight / 3;
     } else if (container.scrollTop + container.clientHeight >= container.scrollHeight) {
@@ -57,13 +60,13 @@ const VerticalCarouselComponent = ({ onProjectSelect, projects }) => {
   };
 
   return (
+    <div classname = "outside-carousel"> 
     <div className="vertical-carousel">
-      <button className="carousel-button top" onClick={handlePrev}></button>
       <div className="carousel-container" ref={carouselRef} onScroll={handleScroll}>
         {projects.map((project, index) => (
           <div
             key={index}
-            className={`carousel-item ${index % (projects.length / 3) === currentIndex ? 'active' : ''}`}
+            className={`carousel-item ${index % projects.length === currentIndex ? 'active' : ''}`}
             onClick={() => handleClick(index)}
           >
             <img src={project.image} alt={project.title} />
@@ -72,7 +75,10 @@ const VerticalCarouselComponent = ({ onProjectSelect, projects }) => {
           </div>
         ))}
       </div>
-      <button className="carousel-button bottom" onClick={handleNext}></button>
+      
+    </div>
+    <button className="carousel-button top" onClick={handlePrev}></button>
+    <button className="carousel-button bottom" onClick={handleNext}></button>
     </div>
   );
 };

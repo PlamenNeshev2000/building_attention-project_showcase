@@ -1,34 +1,68 @@
-/* src/css/ProjectInfoComponent.css */
+.project-detail-container {
+  padding: 20px;
+  color: #fff;
+  background-color: #333; /* Adjust background color as needed */
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 0 auto;
+}
 
-/* .project-info {
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-  }
-  
-  .project-info-title {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #333;
-  }
-  
-  .project-info-image {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-    border-radius: 8px;
-  }
-  
-  .project-info-description {
-    font-size: 1.2rem;
-    color: #666;
-  }
-  
-  .project-info-content {
-    margin-top: 20px;
-    font-size: 1rem;
-    color: #444;
-  }
-   */
+.project-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.project-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.project-info > div {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.project-info > div:last-child {
+  margin-right: 0;
+}
+
+.project-client h3,
+.project-specialization h3,
+.project-group-members h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.project-client p,
+.project-specialization p,
+.project-group-members ul {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.project-group-members ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.project-group-members ul li {
+  margin-bottom: 5px;
+}
+
+.project-description,
+.project-objectives {
+  margin-bottom: 20px;
+}
+
+.project-description h3,
+.project-objectives h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.project-description p,
+.project-objectives p {
+  font-size: 1rem;
+  margin: 0;
+}
