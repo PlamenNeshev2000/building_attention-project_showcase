@@ -70,7 +70,7 @@ const CoverflowComponent = () => {
               <img
                 src={project.imgSrc}
                 alt={project.title}
-                style={{ display: "block", width: "100%" }}
+                style={{ display: "block", width: "100%", color: "#000000" }}
               />
             </div>
           ))}

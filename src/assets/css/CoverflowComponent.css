@@ -10,3 +10,9 @@
   transform: scale(0.8); /* Decrease the size of inactive items */
 }
 
+.project-title{
+  color: rgb(255, 255, 255);
+}
+.coverflow-container .coverflow__figure__3bk_C {
+  box-shadow: 0 50px 70px rgba(0, 0, 0, 0.5) !important;
+}
