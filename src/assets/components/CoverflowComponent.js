@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Coverflow from "react-coverflow";
 import logo from '../images/Logo.png';
+import GraduationImage from '../images/Graduation Session Image.jpg'
 
 const CoverflowComponent = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -27,6 +28,7 @@ const CoverflowComponent = () => {
       // Otherwise, set the item to be centered
       setCurrentIndex(index);
     }
+ 
   };
 
   if (!isMounted) {
@@ -34,18 +36,19 @@ const CoverflowComponent = () => {
   }
 
   const projects = [
-    { link: '/detail/project-management', title: 'Project #1', imgSrc: 'https://www.celoxis.com/cassets/img/pmc/project-management.png' },
-    { link: '/detail/encrypted-image', title: 'Project #2', imgSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4GQuewxLfMh2olMxwVIVsJmu1qFf5Q4dwZw&s' },
-    { link: '/detail/other-image', title: 'Project #3', imgSrc: 'https://media.licdn.com/dms/image/C5612AQEjJmksJXLc2Q/article-cover_image-shrink_600_2000/0/1520159541026?e=2147483647&v=beta&t=FqFXevj_qrickAJtsWcMDi6gJ8hhaWu2N5qqPDRV1o8' },
-    { link: '/detail/project-management-2', title: 'Project #4', imgSrc: 'https://www.celoxis.com/cassets/img/pmc/project-management.png' },
-    { link: '/detail/new-project', title: 'Project #5', imgSrc: 'https://newcognito.com/wp-content/uploads/2022/04/projects-head-img-01.jpg' },
+    { link: '/detail/project-management', title: 'Project to be added', imgSrc: 'https://dygtyjqp7pi0m.cloudfront.net/noimage.jpg' },
+    { link: '/detail/encrypted-image', title: 'AI Project', imgSrc: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4GQuewxLfMh2olMxwVIVsJmu1qFf5Q4dwZw&s' },
+    { link: '/detail/other-image', title: 'Student Project Showcase', imgSrc: GraduationImage },
+    { link: '/detail/project-management-2', title: 'Software Project', imgSrc: 'https://www.celoxis.com/cassets/img/pmc/project-management.png' },
+    { link: '/detail/new-project', title: 'New Project', imgSrc: 'https://newcognito.com/wp-content/uploads/2022/04/projects-head-img-01.jpg' },
   ];
 
   return (
     <div className="coverflow-container">
+      
       {isMounted && (
         <Coverflow
-          width="80%"
+          width="100%"
           height="60%"
           displayQuantityOfSide={2}
           navigation={false}

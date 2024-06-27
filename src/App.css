@@ -102,3 +102,12 @@ img {
   height: auto;
   z-index: 1000;
 }
+
+
+.coverflow__figure__3bk_C {
+  box-shadow: none !important; /* Override the box-shadow */
+}
+
+.coverflow__container__3uP3O {
+  border: none !important; /* Ensure no borders are applied */
+}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import VerticalCarouselComponent from '../components/VerticalCarouselComponent';
 import { projects } from '../../data/ProjectsData.js';
 import '../css/ProjectDetail.css';
@@ -9,6 +9,7 @@ const ProjectDetail = () => {
   const [currentProject, setCurrentProject] = useState(null);
   const [galleryOpen, setGalleryOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const project = projects.find(p => p.id === projectId);
@@ -38,9 +39,16 @@ const ProjectDetail = () => {
     setCurrentImageIndex((currentImageIndex - 1 + currentProject.gallery.length) % currentProject.gallery.length);
   };
 
+  const handleBackClick = () => {
+    navigate('/');
+  };
+
   return (
     <div className="project-detail-container">
       <div className="carousel-container">
+        <button className="back-button" onClick={handleBackClick}>
+          &#8592;
+        </button>
         <VerticalCarouselComponent onProjectSelect={setCurrentProject} projects={projects} />
       </div>
       <div className="project-info-container">
@@ -68,40 +76,37 @@ const ProjectDetail = () => {
         </div>
         <div className="project-description-section">
           <h3 className="section-title">Project Overview</h3>
-          <p className="section-content">{currentProject.description}</p>
+          <p className="section-content">In the Project Overview section, students will provide a brief, yet comprehensive description of their project.
+             Think of this as your project's snapshot, capturing its essence and significance in a few concise sentences.</p>
         </div>
         <div className="project-objectives-section">
           <h3 className="section-title">Project Objectives</h3>
-          <p className="section-content">{currentProject.objectives}</p>
+          <p className="section-content">In the Project Objectives section, student will define the specific goals their project aimed to achieve. 
+Guidelines: Think of this as your project's roadmap, creating measurable, realistic, and time-bound milestones. For example, you might aim to develop a 
+secure image encryption algorithm, for that your goals would be: ensuring handling large files efficiently, testing against security vulnerabilities, and integrating it into an app, 
+all by the semester's end. Keep them focused, achievable, and aligned with your project's purpose.
+ </p>
         </div>
         <div className="project-impact-section">
           <h3 className="section-title">Results & Impact</h3>
-          <p className="section-content">Here students will list the impacat their project had in their respective company and the most important insights that
-             came out of the projects</p>
-        </div>
-
-        <div className="project-objective-section">
-          <h3 className="section-title">Git Repository</h3>
           <p className="section-content">
-          <a href="https://github.com/your-repo-link" target="_blank" rel="noopener noreferrer">
-              GitHub Repository Link // GitHub Repository Link // GitHub Repository Link 
-            </a></p>
+In the Results & Impact section, students will describe the outcomes and significance of their project. Think of this as your project's reflection, 
+showcasing the benefits and contributions it has made. For example,regarding the aformentioned secure image encryption algorithm - it has successfully enhanced data protection 
+for users. By efficiently handling large image files and providing robust security against vulnerabilities, the algorithm has significantly reduced the risk 
+of data breaches. Keep it concise, highlighting key insights and their impact.</p>
         </div>
-
         <div className="project-prototype-section">
           <h3 className="section-title">Prototype/Proof of Concept</h3>
           <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ" /* Replace with actual video URL */
+            width="720" /* Updated width */
+            height="405" /* Updated height */
+            src={currentProject.video} /* Replace with actual video URL */
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
           ></iframe>
         </div>
-
-        
         <div className="project-gallery">
           <h3 className="section-title">Gallery</h3>
           <div className="gallery-images">
@@ -116,6 +121,14 @@ const ProjectDetail = () => {
             ))}
           </div>
         </div>
+        {/* <div className="project-git-section">
+          <h3 className="section-title">Git Repository</h3>
+          <p className="section-content">
+             <a href="https://github.com/your-repo-link" target="_blank" rel="noopener noreferrer"> 
+              This is where students can leave their other git links for other students to see.
+             </a> 
+          </p>
+        </div> */}
       </div>
 
       {galleryOpen && (

@@ -2,7 +2,7 @@
   transition: transform 0.3s ease;
 }
 
-.project-container.active {
+.coverflow-container.active {
   transform: scale(1.2); /* Increase the size of the active item */
 }
 
@@ -13,6 +13,85 @@
 .project-title{
   color: rgb(255, 255, 255);
 }
-.coverflow-container .coverflow__figure__3bk_C {
-  box-shadow: 0 50px 70px rgba(0, 0, 0, 0.5) !important;
+:root {
+  --primary-black: #1d1d1b;
+  --primary-white: #ffffff;
+  --secondary-blue: #6200EE;
+  --secondary-orange: #ED5218;
+}
+
+.coverflow__figure__3bk_C {
+  box-shadow: none !important; /* Override the box-shadow */
+}
+
+.coverflow__container__3uP3O {
+  border: none !important; /* Ensure no borders are applied */
+}
+
+.coverflow-container {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.coverflow-title {
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.app-logo {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+  .coverflow-container {
+    width: 90%;
+  }
+
+  .coverflow-title {
+    font-size: 1.8rem;
+  }
+
+  .app-logo img {
+    width: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .coverflow-container {
+    width: 100%;
+  }
+
+  .coverflow-title {
+    font-size: 1.5rem;
+  }
+
+  .app-logo img {
+    width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .coverflow-title {
+    font-size: 1.2rem;
+  }
+
+  .app-logo img {
+    width: 80px;
+  }
+}
+
+/* Styles to make the main carousel pictures bigger */
+.coverflow__figure__3bk_C:nth-child(n+2):nth-child(-n+6) {
+  transform: scale(1.2) !important; /* Adjust the scale value as needed */
+}
+
+.coverflow__figure__3bk_C.active {
+  transform: scale(1.5) !important; /* Make the active element bigger */
 }

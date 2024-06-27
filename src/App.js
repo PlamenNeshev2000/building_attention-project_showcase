@@ -15,7 +15,7 @@ const App = () => (
         <Route path="/detail/:projectId" element={<ProjectDetail />} />
         <Route path="/detail/:projectId" element={<ProjectDetail/>} />
       </Routes>
-      <img src={logo} alt="Logo" className="app-logo" /> {/* Add the logo */}
+     
     </div>
   </Router>
 );
