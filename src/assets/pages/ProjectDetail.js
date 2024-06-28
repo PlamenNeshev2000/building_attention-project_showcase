@@ -121,14 +121,14 @@ of data breaches. Keep it concise, highlighting key insights and their impact.</
             ))}
           </div>
         </div>
-        {/* <div className="project-git-section">
+         <div className="project-git-section">
           <h3 className="section-title">Git Repository</h3>
           <p className="section-content">
-             <a href="https://github.com/your-repo-link" target="_blank" rel="noopener noreferrer"> 
+             <a href="https://github.com/your-repo-link" target="_blank" rel="noopener noreferrer" className="white-text"> 
               This is where students can leave their other git links for other students to see.
              </a> 
           </p>
-        </div> */}
+        </div> 
       </div>
 
       {galleryOpen && (
