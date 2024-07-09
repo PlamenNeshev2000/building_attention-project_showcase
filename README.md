@@ -12,12 +12,15 @@ This repository contains the source code for the Building Attention Project Show
 - [Folder Structure](#folderstructure)
 - [Notes](#notes)
 
-## Installation
+*TO READ THE README CLEARLY, OPEN IT IN AN EDITOR, AS IN GIT IT'S A BIT SCRUNCHED UP*
 
+## Installation
 Follow these steps to set up the project on your local machine:
 
 1. **Clone the repository**:
    git clone https://github.com/your-username/building-attention-project-showcase.git
+
+
    cd building-attention-project-showcase
 Install dependencies:
 Ensure you have Node.js and Yarn installed. Then run:
