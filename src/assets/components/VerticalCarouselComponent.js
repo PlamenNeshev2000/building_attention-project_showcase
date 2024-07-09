@@ -81,25 +81,34 @@ const VerticalCarouselComponent = ({ onProjectSelect, projects }) => {
     trackMouse: false // Disable mouse tracking to focus on touch interaction
   });
 
+  const handleBackClick = () => {
+    navigate('/'); // Navigate to the main carousel route
+  };
+
   return (
-    <div className="outside-carousel" {...swipeHandlers} ref={carouselRef}>
-      <div className="vertical-carousel">
-        <div className="carousel-container" onScroll={handleScroll}>
-          {projects.map((project, index) => (
-            <div
-              key={index}
-              className={`carousel-item ${index % projects.length === currentIndex ? 'active' : ''}`}
-              onClick={() => handleClick(index)}
-            >
-              <img src={project.image} alt={project.title} />
-              <div className="project-title-vertical">{project.title}</div>
-              <div className="project-specialization-vertical">{project.specialization}</div>
-            </div>
-          ))}
+    <div className="carousel-wrapper">
+      <button className="carousel-button top" onClick={handlePrev}></button>
+      <div className="vertical-carousel-container">
+        <div className="vertical-carousel" {...swipeHandlers}>
+          <div className="carousel-container" ref={carouselRef} onScroll={handleScroll}>
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                className={`carousel-item ${index % projects.length === currentIndex ? 'active' : ''}`}
+                onClick={() => handleClick(index)}
+              >
+                <img src={project.image} alt={project.title} />
+                <div className="project-title-vertical">{project.title}</div>
+                <div className="project-specialization-vertical">{project.specialization}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-      <button className="carousel-button top" onClick={handlePrev}></button>
       <button className="carousel-button bottom" onClick={handleNext}></button>
+      <button className="back-button" onClick={handleBackClick}>
+        &#8592;
+      </button>
     </div>
   );
 };

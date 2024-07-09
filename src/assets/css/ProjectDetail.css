@@ -5,83 +5,94 @@
   --secondary-orange: #ED5218;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling for the whole page */
+}
+
 .project-detail-container {
   display: flex;
   height: 100vh;
   background: url('../images/Background.png') no-repeat center center fixed;
   background-size: cover;
   color: var(--primary-white);
-  overflow-y: auto; /* Enable vertical scrolling */
+  position: relative;
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 1; /* Ensure it's above the background but below content */
+}
 
 .carousel-container {
-  flex: 3;
+  flex: 1;
   padding: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   backdrop-filter: blur(5px);
   max-width: 300px;
+  height: auto;
   box-sizing: border-box;
+  position: relative;
+  z-index: 2;
 }
 
-.project-info-container { 
+.project-info-container {
   flex: 2;
   padding: 20px;
-  overflow-y: auto; /* Ensure vertical scrolling within the container */
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 20px;
   box-sizing: border-box;
-  width: 100%; /* Ensure it uses full width */
-  max-width: 100%;
+  position: relative;
+  z-index: 2;
+  margin-top: 20px;
 }
-
-
-.white-text {
-  color: var(--primary-white);
-}
-
 
 .project-header {
-   margin-top: 300px; 
-  /* Change depending on resolution */
+  margin-top: 600px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 30px; /* Add margin to separate from other content */
 }
 
 .project-title-info {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
-  flex: 1;
+  font-size: 2rem; /* Adjusted font size */
 }
 
 .project-image {
-  max-width: 500px;
+  max-width: 400px; /* Adjusted max-width */
   height: auto;
-  margin-left: 20px;
-  margin-bottom: 20px;
+  margin-left: 10px;
 }
 
 .project-details {
-  font-size: 1.3rem;
+  margin-top: 10px;
+  font-size: 1rem; /* Adjusted font size */
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   background-color: rgba(0, 0, 0, 0.7);
   padding: 10px;
   border-radius: 5px;
+  margin-left: 10px;
 }
 
+
 .project-details div {
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   text-align: left;
-  margin: 0 5px;
 }
 
 .project-details div strong {
@@ -112,24 +123,31 @@
 .project-prototype-section,
 .project-gallery,
 .project-git-section {
-  margin-bottom: 5px; /* Less margin between sections */
+  margin-bottom: 20px; /* More margin between sections */
 }
 
 .section-title {
-  margin-right: 50px;
-  font-size: 1.5rem;
+  margin-right: 100px;
+  font-size: 1.7rem;
   margin-bottom: 5px;
   color: var(--primary-white); /* Secondary blue color */
 }
 
 .section-content {
+  /* margin-left: 70px; */
   color: var(--primary-white);
+  margin-top: 10px; /* Add margin to separate from titles */
+  max-width: 1000px; /* Limit width for better readability */
+}
+
+iframe {
+  margin-right: 200px;
 }
 
 .project-gallery {
   display: flex;
   flex-direction: column;
-  overflow-x: hidden;
+
 }
 
 .gallery-images {
@@ -154,7 +172,6 @@
 .gallery-thumbnail:hover {
   border: 2px solid var(--secondary-blue); /* Hover color */
 }
-
 
 .gallery-modal {
   position: fixed;
@@ -198,17 +215,3 @@
   right: 20px;
 }
 
-.back-arrow {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  font-size: 30px;
-  color: var(--primary-white);
-  cursor: pointer;
-  z-index: 1000; /* Ensure it's on top of other elements */
-}
-
-
-.back-button:hover {
-  background: var(--secondary-orange);
-}

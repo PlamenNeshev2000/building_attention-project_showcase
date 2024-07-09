@@ -1,70 +1,166 @@
-# Getting Started with Create React App
+# Building Attention - Project Showcase
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains the source code for the Building Attention Project Showcase, a React-based application to display student projects.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Installation](#installation)
+- [Usage](#usage)
+- [Folder Structure](#folder-structure)
+- [Scripts](#scripts)
+- [Dependencies](#dependencies)
+- [Folder Structure](#folderstructure)
+- [Notes](#notes)
 
-### `yarn start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Follow these steps to set up the project on your local machine:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Clone the repository**:
+   git clone https://github.com/your-username/building-attention-project-showcase.git
+   cd building-attention-project-showcase
+Install dependencies:
+Ensure you have Node.js and Yarn installed. Then run:
+yarn install
 
-### `yarn test`
+Installing Each Dependency Individually
+If you need to install dependencies individually, use the following commands:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+'react:'
+yarn add react
 
-### `yarn build`
+'react-dom:'
+yarn add react-dom
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+'react-router-dom:'
+yarn add react-router-dom
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+'react-scripts:'
+yarn add react-scripts
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+'react-coverflow:'
+yarn add react-coverflow
 
-### `yarn eject`
+'react-responsive-carousel:'
+yarn add react-responsive-carousel
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+'react-slick:'
+yarn add react-slick
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+'react-swipeable:'
+yarn add react-swipeable
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+'slick-carousel:'
+yarn add slick-carousel
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+'gsap:'
+yarn add gsap
 
-## Learn More
+## Usage
+To start the development server and run the application locally:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Start the development server:
+yarn start
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Open your browser:
+Navigate to http://localhost:3000 to view the application.
 
-### Code Splitting
+## Folder Structure
+The project structure is as follows:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+building-attention-project-showcase/
+│
+├── public/
+│   ├── index.html
+│   └── ...
+│
+├── src/
+│   ├── assets/
+│   │   └── images/
+│   │       └── ...
+│   │
+│   ├── components/
+│   │   ├── CoverflowComponent.js
+│   │   ├── VerticalCarouselComponent.js
+│   │   └── ProjectInfoComponent.js
+│   │
+│   ├── css/
+│   │   └── VerticalCarouselComponent.css
+        └── ProjectDetail.css
+        └── ProjectInfoComponent.css
+        └── CoverflowComponent.css
+│   │
+│   ├── data/
+│   │   └── ProjectsData.js
+│   │
+│   ├── App.js
+│   ├── index.js
+│   └── App.css
+│
+├── package.json
+├── yarn.lock
+├── README.md
+└── webpack.config.js
 
-### Analyzing the Bundle Size
+## Scripts
+Here are the available scripts for this project:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Start the development server:
+yarn start
 
-### Making a Progressive Web App
+Build the project for production:
+yarn build
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Run tests:
+yarn test
 
-### Advanced Configuration
+Eject the configuration:
+yarn eject
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Dependecies
+The main dependencies used in this project are:
 
-### Deployment
+react: ^18.3.1
+react-dom: ^18.3.1
+react-router-dom: ^6.23.1
+react-scripts: 5.0.1
+react-coverflow: ^0.2.20
+react-responsive-carousel: ^3.2.23
+react-slick: ^0.30.2
+react-swipeable: ^7.0.1
+slick-carousel: ^1.8.1
+gsap: ^3.12.5
+For a complete list of dependencies, refer to the package.json file.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Page Descriptions
 
-### `yarn build` fails to minify
+App.js
+The main entry point of the application.
+Configures routing using react-router-dom to navigate between different pages.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+CoverflowComponent.js
+Displays the main carousel of projects using a custom coverflow implementation.
+Allows users to select and navigate through various projects visually.
+Includes swipe handling using react-swipeable for smooth transitions.
+
+ProjectsData.js
+Contains the data for all projects displayed in the carousels.
+Includes project titles, descriptions, images, and other relevant information.
+
+App.css
+Contains the main styling rules for the application.
+Defines the layout, colors, and typography for the project showcase.
+
+VerticalCarouselComponent.js
+Displays a vertical carousel of project thumbnails.
+Allows users to select a project by clicking or swiping through the thumbnails.
+Handles touch interactions with react-swipeable to enhance the user experience on touch devices.
+
+ProjectDetail.js
+Displays detailed information about a selected project.
+Includes sections for project overview, objectives, impact, prototype, and gallery.
+Allows users to navigate back to the main carousel.
+
+## Notes
+The project uses a custom background image located in src/assets/images/DarkenedBackground.png. Ensure this path is correct or update the path in App.css if the image is located elsewhere.
+Adjust the configurations in webpack.config.js as needed for your environment.
